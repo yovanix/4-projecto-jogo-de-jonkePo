@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("https://picsum.photos/1920/1080");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+
+.container {
+
+    padding: 20px;
+    background-color: #45b7fa;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.choices {
+    margin: 30px 0;
+    display: flex;
+    gap: 40px;
+}
+
+.confetti-container {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.confetti-piece {
+    position: absolute;
+    top: -20px;
+    opacity: 0.95;
+    border-radius: 50%;
+    animation: confetti-fall 3s ease-out forwards;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes confetti-fall {
+    from {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+        opacity: 1;
+    }
+    to {
+        transform: translate3d(var(--drift), 110vh, 0) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+button {
+
+    padding: 10px;
+    font-size: 50px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button:active {
+    opacity: 0.6;
+}
+
+button.disabled,
+button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+button.machine-choice {
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.65);
+    transform: scale(0.5);
+}
+
+#rock {
+    background-color: #f44336;
+}
+
+#paper {
+    background-color: #4CAF50;
+}
+
+#scissors {
+    background-color: #2196F3;
+}
+
+p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.scoreIam {
+    color: #720800;
+
+}
+.scoreAlexa {
+    color: #1f3f02;
+}
